@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import mogli
 import gr
+import os
 
 import argparse
 
@@ -17,6 +18,10 @@ parser.add_argument("-fixx",default=0,type=float,help="fix x axis")
 parser.add_argument("-fixy",default=23.222,type=float,help="fix y axis")
 parser.add_argument("-fixz",default=0,type=float,help="fix z axis")
 args = parser.parse_args()
+
+if args.output is not None:
+    os.environ["GKS_WSTYPE"] = args.output[-3:]
+    os.environ["GKS_FILEPATH"] = args.output
 
 if args.filename.endswith('.xyz'):
     molecules = mogli.read(args.filename)

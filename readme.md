@@ -23,3 +23,10 @@ python ./main.py -filename "./examples/alanine-dipeptide-3x250ns-heavy-atom-posi
 ```
 
 To fix bonds according to SMILES, use `-fix_bond` option.( also requires my version of mogli)
+
+## To generate image with mogli
+
+```python
+
+```
+

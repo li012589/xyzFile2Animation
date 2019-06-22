@@ -26,7 +26,7 @@ To fix bonds according to SMILES, use `-fix_bond` option.( also requires my vers
 
 ## To generate image with mogli
 
-```python
-
+```bash
+python ./draw.py -filename "./interpolation.npz" -batch 200 -step 100 -name arr_0 -smile "CC(=O)NC(C)C(=O)NC" -scaling 1 -fixy 0 -output testdf.png -fix_bond
 ```
 

@@ -44,4 +44,4 @@ for t in times:
     #mogli.draw(molecules[t], bonds_param=args.bond, camera=((12, 0, 12),(0, 0, 0),(0, 1, 0)))
     mogli.export(molecules[t],args.output.split(".")[0]+str(t)+"."+args.output.split(".")[1],bonds_method=bonds_method,bonds_param=bonds_param, camera=((12, 0, 12),(0, 0, 0),(0, 1, 0)))
 
-    gr.updatews()
+    #gr.updatews()

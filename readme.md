@@ -22,4 +22,4 @@ To generate a video, you can use the `-output` option, e.g.
 python ./main.py -filename "./examples/alanine-dipeptide-3x250ns-heavy-atom-positions.npz" -batch 200 -name arr_0 -smile "CC(=O)NC(C)C(=O)NC" -scaling 1 -fixy 0 -output test2.mov
 ```
 
-To fix bonds according to SMILES, use `-fix_bond` option.
+To fix bonds according to SMILES, use `-fix_bond` option.( also requires my version of mogli)

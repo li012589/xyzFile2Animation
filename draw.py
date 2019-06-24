@@ -9,6 +9,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("-filename",default=None,help="name of the data file")
 parser.add_argument("-output",default=None,help="name of the output files")
+parser.add_argument("-concat",default="input.txt",help="name of the concat file used by ffmpeg")
 parser.add_argument("-batch",default=100,type=int,help="number of time steps to show")
 parser.add_argument("-step",default=100,type=int,help="ratio of saving")
 parser.add_argument("-bond",default=1.2,type=float,help="mogli's bong_param")
@@ -45,3 +46,8 @@ for t in times:
     mogli.export(molecules[t],args.output.split(".")[0]+str(t)+"."+args.output.split(".")[1],bonds_method=bonds_method,bonds_param=bonds_param, camera=((7, 0, 7),(0, 0, 0),(0, 1, 0)))
 
     #gr.updatews()
+
+
+with open(args.concat,"w") as f:
+    for t in times:
+        f.write("file "+args.output.split(".")[0]+str(t)+"."+args.output.split(".")[1]+"\n")#+"duration 1\n")

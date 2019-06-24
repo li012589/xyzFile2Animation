@@ -27,6 +27,12 @@ To fix bonds according to SMILES, use `-fix_bond` option.( also requires my vers
 ## To generate image with mogli
 
 ```bash
-python ./draw.py -filename "./interpolation.npz" -batch 200 -step 100 -name arr_0 -smile "CC(=O)NC(C)C(=O)NC" -scaling 1 -fixy 0 -output testdf.png -fix_bond
+python ./draw.py -filename "./interpolation.npz" -batch 201 -step 1 -concat inputs.txt -name arr_0 -smile "CC(=O)NC(C)C(=O)NC" -scaling 1 -fixy 0 -output testdf.png -fix_bond
+```
+
+To generate video using generated image files:
+
+```bash
+ffmpeg -f concat -safe 0 -i inputs.txt -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4
 ```
 

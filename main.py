@@ -22,6 +22,7 @@ parser.add_argument("-fix_bond",action="store_true",help="fix bond according to 
 args = parser.parse_args()
 
 if args.output is not None:
+    os.environ["GKS_VIDEO_OPTS"] = "2000x2000"
     os.environ["GKS_WSTYPE"] = args.output[-3:]
     os.environ["GKS_FILEPATH"] = args.output
 

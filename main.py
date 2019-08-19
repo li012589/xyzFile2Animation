@@ -41,7 +41,7 @@ elif args.filename.endswith('.npz'):
 
 
 for t in range(args.batch):
-
+    print(str(t)+" of "+str(args.batch))
     gr.clearws()
     gr.setviewport(0, 0.7, 0, 0.7)
     gr.setwindow(0.1, 0.9, 0.05, 0.85)

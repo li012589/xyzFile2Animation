@@ -47,7 +47,7 @@ for t in range(args.batch):
     gr.setviewport(0, 0.7, 0, 0.7)
     gr.setwindow(0.1, 0.9, 0.05, 0.85)
     #mogli.draw(molecules[t], bonds_param=args.bond, camera=((12, 0, 12),(0, 0, 0),(0, 1, 0)))
-    mogli.draw(molecules[t], width=500, height=500, bonds_method=bonds_method,bonds_param=bonds_param, camera=((35, 0, 35),(0, 0, 0),(0, 1, 0)))
+    mogli.draw(molecules[t], width=500, height=500, bonds_method=bonds_method,bonds_param=bonds_param, camera=((args.camera_distance, 0, args.camera_distance),(0, 0, 0),(0, 1, 0)))
     #mogli.draw(molecules[t], bonds_method=bonds_method,bonds_param=bonds_param, camera=((12, 0, 12),(0, 0, 0),(0, 1, 0)))
 
     gr.updatews()

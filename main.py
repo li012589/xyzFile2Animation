@@ -18,6 +18,7 @@ parser.add_argument("-fixx",default=0,type=float,help="fix x axis")
 parser.add_argument("-fixy",default=23.222,type=float,help="fix y axis")
 parser.add_argument("-fixz",default=0,type=float,help="fix z axis")
 parser.add_argument("-fix_bond",action="store_true",help="fix bond according to SMILES")
+parser.add_argument("-camera_distance",default=35,type=int,help="distance of camera to atom")
 
 args = parser.parse_args()
 
@@ -46,6 +47,7 @@ for t in range(args.batch):
     gr.setviewport(0, 0.7, 0, 0.7)
     gr.setwindow(0.1, 0.9, 0.05, 0.85)
     #mogli.draw(molecules[t], bonds_param=args.bond, camera=((12, 0, 12),(0, 0, 0),(0, 1, 0)))
-    mogli.draw(molecules[t], bonds_method=bonds_method,bonds_param=bonds_param, camera=((12, 0, 12),(0, 0, 0),(0, 1, 0)))
+    mogli.draw(molecules[t], width=500, height=500, bonds_method=bonds_method,bonds_param=bonds_param, camera=((35, 0, 35),(0, 0, 0),(0, 1, 0)))
+    #mogli.draw(molecules[t], bonds_method=bonds_method,bonds_param=bonds_param, camera=((12, 0, 12),(0, 0, 0),(0, 1, 0)))
 
     gr.updatews()
